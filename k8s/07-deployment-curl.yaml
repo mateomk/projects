@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curl-deployment
+  namespace: alpha
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: debug
+  template:
+    metadata:
+      labels:
+        env: debug
+    spec:
+      containers:
+      - name: curl-container
+        image: ubuntu
+        command: ['sh']
+        args: ['-c', 'curl https://www.whizlabs.com && sleep 360']
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+

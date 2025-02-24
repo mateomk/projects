@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annopod
+  annotations:
+    k8slink: "https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations"
+spec:
+  containers:
+  - name: annopod
+    image: nginx
+    ports:
+    - containerPort: 80
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
