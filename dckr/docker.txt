@@ -10,3 +10,4 @@
 
 
   k -n alpha logs ubuntu-deployment-5f78787958-nqj8k --all-containers
+  k -n alpha get events --field-selector involvedObject.name=mypod
