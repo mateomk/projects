@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: awsec2-pvc
+  namespace: alpha
+spec:
+  storageClassName: ""
+  volumeName: awsec2-pv
+  accessModes: 
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
