@@ -1,13 +1,9 @@
-  116  docker run -itd --name ubi9-python3-12 redhat/ubi9
-  117  docker ps
-  118  docker exec -it ubi9-python3-12 dnf install -y python3.12 python3.12-pip python3.12-setuptools && dnf clean dbcache && dnf clean all
-  119  docker exec -it ubi9-python3-12 dnf clean dbcache && dnf clean all
-  120  docker exec -it ubi9-python3-12 dnf clean dbcache
-  121  docker exec -it ubi9-python3-12 dnf clean all
-  122  docker ps
-  123  docker images
-  124  docker commit ubi9-python3-12 ubi9-python3-12:latest
-
-
-  k -n alpha logs ubuntu-deployment-5f78787958-nqj8k --all-containers
-  k -n alpha get events --field-selector involvedObject.name=mypod
+docker run -itd --name ubi9-python3-12 redhat/ubi9
+docker ps
+docker exec -it ubi9-python3-12 dnf install -y python3.12 python3.12-pip python3.12-setuptools
+docker exec -it ubi9-python3-12 dnf clean dbcache
+docker exec -it ubi9-python3-12 dnf clean all
+docker ps
+docker images
+docker commit ubi9-python3-12 ubi9-python3-12:latest
+k -n alpha get events --field-selector involvedObject.name=mypod
